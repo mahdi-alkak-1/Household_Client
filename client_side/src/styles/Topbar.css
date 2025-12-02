@@ -1,0 +1,31 @@
+.topbar {
+  height: 65px;
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar-user {
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+.topbar-logout {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.topbar-logout:hover {
+  background: #429a44;
+}

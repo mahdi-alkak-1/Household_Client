@@ -1,0 +1,98 @@
+.household-container {
+  padding: 40px;
+}
+
+.hh-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.hh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.hh-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.hh-card:hover {
+  transform: translateY(-4px);
+  background: #f8fff8;
+}
+
+.hh-card.create,
+.hh-card.join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus {
+  font-size: 40px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+/* Modals */
+.hh-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.hh-modal {
+  background: white;
+  padding: 28px;
+  width: 420px;
+  border-radius: 14px;
+}
+
+.hh-modal h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.hh-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hh-modal input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn-primary {
+  background: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-btn {
+  margin-top: 10px;
+  background: #ddd;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}

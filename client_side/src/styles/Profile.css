@@ -1,0 +1,41 @@
+.profile-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  max-width: 450px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.profile-avatar {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-info p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.logout-btn {
+  margin-top: 25px;
+  width: 100%;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background: #c62828;
+}
