@@ -1,0 +1,103 @@
+.shopping-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.shopping-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+/* list selector */
+.shopping-header select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.shopping-header .btn-secondary {
+  background: #ddd;
+  border: none;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.shopping-header .btn-secondary:hover {
+  background: #ccc;
+}
+
+.shopping-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shopping-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.shopping-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.shopping-item span {
+  flex: 1;
+  font-size: 16px;
+}
+
+.small-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.small-btn.edit {
+  background: #2196f3;
+  color: white;
+}
+
+.small-btn.delete {
+  background: #e53935;
+  color: white;
+}
+
+.btn-primary {
+  background: #4caf50;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary:hover {
+  background: #3e9842;
+}
+
+.btn-danger {
+  background: #e53935;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}

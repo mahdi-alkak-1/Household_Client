@@ -1,0 +1,28 @@
+.ingredients-container {
+  padding: 20px;
+}
+
+.ingredients-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.ingredients-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+.ingredient-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
