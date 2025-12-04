@@ -1,0 +1,281 @@
+/* src/styles/expenses.css */
+
+.expenses-page {
+  padding: 24px 28px 40px;
+  color: #f5f7ff;
+}
+
+/* HEADER --------------------------------------------------- */
+
+.expenses-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.expenses-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.expenses-header p {
+  color: #9ea8c7;
+  font-size: 0.9rem;
+}
+
+.expenses-header-right {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.month-select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: #9ea8c7;
+}
+
+.month-select-wrapper select {
+  background: #050b23;
+  border-radius: 999px;
+  border: 1px solid #28325a;
+  padding: 6px 12px;
+  color: #f5f7ff;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.month-select-wrapper select:focus {
+  border-color: #4f8cff;
+  box-shadow: 0 0 0 1px rgba(79, 140, 255, 0.35);
+}
+
+/* SUMMARY -------------------------------------------------- */
+
+.expenses-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1.3fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.summary-card {
+  background: radial-gradient(circle at top left, #1b2443, #070b1a);
+  border-radius: 18px;
+  border: 1px solid rgba(93, 122, 255, 0.4);
+  padding: 14px 18px 16px;
+  box-shadow: 0 14px 40px rgba(3, 10, 29, 0.7);
+}
+
+.summary-card.main {
+  grid-column: span 1;
+}
+
+.summary-card h3,
+.summary-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.summary-amount {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.summary-currency {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.summary-number {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.summary-sub {
+  font-size: 0.78rem;
+  color: #a4afcf;
+}
+
+.category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(14, 163, 233, 0.08);
+  border: 1px solid rgba(14, 163, 233, 0.4);
+  font-size: 0.75rem;
+}
+
+.chip.muted {
+  opacity: 0.7;
+  border-style: dashed;
+}
+
+.chip-label {
+  color: #d8e2ff;
+}
+
+.chip-value {
+  font-weight: 600;
+  color: #4fd1c5;
+}
+
+/* LIST ----------------------------------------------------- */
+
+.expenses-list-section {
+  margin-top: 6px;
+}
+
+.list-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.empty-note {
+  font-size: 0.9rem;
+  color: #a4afcf;
+  padding: 14px 0;
+}
+
+.expenses-table-wrapper {
+  background: rgba(7, 11, 29, 0.96);
+  border-radius: 20px;
+  border: 1px solid rgba(40, 50, 90, 0.8);
+  box-shadow: 0 16px 50px rgba(2, 8, 28, 0.85);
+  overflow: hidden;
+}
+
+.expenses-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.expenses-table thead {
+  background: linear-gradient(90deg, #111633, #161e46);
+}
+
+.expenses-table th,
+.expenses-table td {
+  padding: 10px 16px;
+}
+
+.expenses-table th {
+  text-align: left;
+  font-weight: 500;
+  color: #aeb7dd;
+  border-bottom: 1px solid rgba(35, 46, 85, 0.9);
+  white-space: nowrap;
+}
+
+.expenses-table tbody tr:nth-child(even) {
+  background: rgba(11, 18, 46, 0.7);
+}
+
+.expenses-table tbody tr:nth-child(odd) {
+  background: rgba(7, 11, 31, 0.95);
+}
+
+.expenses-table tbody tr:hover {
+  background: rgba(35, 67, 140, 0.4);
+}
+
+.note-cell {
+  max-width: 260px;
+  color: #c2c9e6;
+}
+
+.amount-cell {
+  font-weight: 600;
+  color: #4fd1c5;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.actions-cell {
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* Reuse small-btn styles from other pages; just nudge spacing */
+.actions-cell .small-btn {
+  margin-left: 6px;
+}
+
+/* FORM INSIDE MODALS --------------------------------------- */
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-form label {
+  font-size: 0.8rem;
+  color: #aeb7dd;
+  margin-bottom: 2px;
+}
+
+.modal-form input,
+.modal-form textarea,
+.modal-form select {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #28325a;
+  background: #050b23;
+  color: #f5f7ff;
+  padding: 7px 10px;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.modal-form input:focus,
+.modal-form textarea:focus,
+.modal-form select:focus {
+  border-color: #4f8cff;
+  box-shadow: 0 0 0 1px rgba(79, 140, 255, 0.35);
+}
+
+.modal-form textarea {
+  resize: vertical;
+}
+
+.form-row.two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.modal-submit {
+  margin-top: 8px;
+  align-self: flex-end;
+}
+
+/* Adjust selector to match the scrollable container in your Modal component */
+.modal-body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
