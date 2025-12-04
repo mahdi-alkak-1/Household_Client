@@ -10,6 +10,7 @@ const navItems = [
   { to: "/shopping", label: "Shopping", icon: "🛒" },
   { to: "/expenses", label: "Expenses", icon: "💰" }, // NEW
   { to: "/meal-plan", label: "Meal Plan", icon: "🍽" },
+  { to: "/ai-assistant", label: "AI Assistant", icon: "✨" },
   { to: "/profile", label: "Profile", icon: "👤" },
 ];
 
