@@ -1,90 +1,135 @@
-/* -------------------------
-   AUTH PAGE LAYOUT
--------------------------- */
+/* auth.css */
+
 .auth-container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: #f4f7f4;
-  padding: 20px;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.25), transparent 55%),
+    #020617;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  color: #e5e7ff;
 }
 
-/* -------------------------
-   AUTH CARD BOX
--------------------------- */
 .auth-box {
-  width: 380px;
-  background: #ffffff;
-  padding: 32px;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  text-align: center;
+  width: min(420px, 100%);
+  background: radial-gradient(circle at top left, #1f2937, #020617 65%);
+  border-radius: 20px;
+  padding: 2.25rem 2rem 2.1rem;
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(148, 163, 255, 0.2);
+  border: 1px solid rgba(55, 65, 81, 0.9);
 }
 
 .auth-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #1d2d1f;
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 650;
 }
 
-/* -------------------------
-   INPUTS
--------------------------- */
+.auth-box::before {
+  content: "HousePlan";
+  display: inline-block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3ff;
+  margin-bottom: 0.7rem;
+  opacity: 0.9;
+}
+
 .auth-form {
+  margin-top: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0.85rem;
 }
 
 .auth-input {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #cfcfcf;
-  font-size: 15px;
-  transition: 0.2s;
+  width: 100%;
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 255, 0.35);
+  padding: 0.7rem 0.8rem;
+  font-size: 0.95rem;
+  color: #e5e7ff;
+  outline: none;
+  transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.auth-input::placeholder {
+  color: #6b7280;
 }
 
 .auth-input:focus {
-  border-color: #4caf50;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.25);
+  border-color: #818cf8;
+  background: #02051b;
+  box-shadow:
+    0 0 0 1px rgba(129, 140, 248, 0.8),
+    0 0 32px rgba(129, 140, 248, 0.5);
+  transform: translateY(-1px);
 }
 
-/* -------------------------
-   BUTTON
--------------------------- */
 .auth-btn {
-  margin-top: 10px;
-  background: #4caf50;
-  color: white;
+  margin-top: 0.4rem;
+  width: 100%;
+  border-radius: 999px;
   border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: #020617;
+  font-weight: 600;
+  font-size: 0.98rem;
   cursor: pointer;
-  transition: 0.2s;
+  transition: transform 0.12s ease, box-shadow 0.18s ease,
+    filter 0.12s ease;
+  box-shadow:
+    0 18px 40px rgba(34, 197, 94, 0.55),
+    0 0 0 1px rgba(190, 242, 100, 0.35);
 }
 
 .auth-btn:hover {
-  background: #3e9d43;
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 22px 52px rgba(34, 197, 94, 0.7),
+    0 0 0 1px rgba(190, 242, 100, 0.55);
 }
 
-/* -------------------------
-   SWITCH LINK
--------------------------- */
 .auth-switch {
-  margin-top: 18px;
-  font-size: 14px;
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-align: center;
 }
 
 .auth-switch a {
-  color: #4caf50;
-  font-weight: 600;
+  color: #c7d2fe;
+  font-weight: 500;
   text-decoration: none;
+  border-bottom: 1px dashed rgba(199, 210, 254, 0.4);
+  padding-bottom: 1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .auth-switch a:hover {
-  text-decoration: underline;
+  color: #e5e7ff;
+  border-color: rgba(229, 231, 235, 0.85);
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 1.75rem 1.4rem 1.8rem;
+  }
+
+  .auth-title {
+    font-size: 1.4rem;
+  }
 }

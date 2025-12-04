@@ -1,28 +1,129 @@
+/* ================================
+   Ingredients Page
+   ================================ */
+
 .ingredients-container {
-  padding: 20px;
+  padding: 1.75rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
 }
 
 .ingredients-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  align-items: center;
 }
 
+.ingredients-header h1 {
+  font-size: 1.6rem;
+}
+
+.ingredients-header .btn-primary {
+  padding: 0.55rem 1.1rem;
+}
+
+/* GRID: cards side by side */
 .ingredients-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
 }
 
+/* CARD */
 .ingredients-card {
-  background: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  border: 1px solid #e5e5e5;
+  background: radial-gradient(circle at top left, #1f2937 0, #020617 70%);
+  border-radius: 1.1rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 
+.ingredients-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.ingredients-card .small {
+  font-size: 0.85rem;
+  color: #cbd5f5;
+}
+
+/* Actions */
 .ingredient-actions {
+  margin-top: 0.5rem;
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  gap: 0.5rem;
+}
+
+.small-btn {
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  border: none;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.small-btn.edit {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+}
+
+.small-btn.delete {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f97373;
+}
+
+/* Modals – reuse generic look */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 60;
+}
+
+.modal {
+  background: #020617;
+  border-radius: 1.2rem;
+  padding: 1.5rem 1.75rem;
+  width: 100%;
+  max-width: 430px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+}
+
+.modal input {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+}
+
+.modal .btn-primary {
+  margin-top: 0.25rem;
+  width: 100%;
+}
+
+.close-btn {
+  margin-top: 0.65rem;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.6rem;
+  border: none;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  cursor: pointer;
 }

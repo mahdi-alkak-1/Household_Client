@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+// src/pages/Pantry/Pantry.tsx
+import { useEffect, useMemo, useState } from "react";
 import axiosClient from "../../api/axiosClient";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import "../../styles/pantry.css";
@@ -23,6 +24,15 @@ export default function Pantry() {
     expiry_date: "",
     location: "",
   });
+
+  // Build map: ingredient_id -> name (for fallback)
+  const ingredientNameById = useMemo(() => {
+    const map: Record<number, string> = {};
+    ingredients.forEach((ing: any) => {
+      map[ing.id] = ing.name;
+    });
+    return map;
+  }, [ingredients]);
 
   // ---------------------------------------------------------
   // LOAD PANTRY + INGREDIENTS
@@ -135,37 +145,52 @@ export default function Pantry() {
           <p>No pantry items yet.</p>
         ) : (
           <div className="pantry-grid">
-            {items.map((item) => (
-              <div className="pantry-card" key={item.id}>
-                <h3>{item.ingredient?.name}</h3>
+            {items.map((item) => {
+              const displayName =
+                item.ingredient?.name ||
+                ingredientNameById[item.ingredient_id] ||
+                "Unknown ingredient";
 
-                <p>
-                  {item.quantity} {item.unit}
-                </p>
+              return (
+                <div className="pantry-card" key={item.id}>
+                  <div className="pantry-card-header">
+                    <h3>{displayName}</h3>
+                    {item.location && (
+                      <span className="pantry-location-chip">
+                        {item.location}
+                      </span>
+                    )}
+                  </div>
 
-                {item.expiry_date && (
-                  <p className="small">Expiry: {item.expiry_date}</p>
-                )}
+                  <p className="pantry-qty">
+                    {item.quantity} {item.unit}
+                  </p>
 
-                {item.location && <p className="small">Location: {item.location}</p>}
+                  {item.expiry_date && (
+                    <p className="small">Expiry: {item.expiry_date}</p>
+                  )}
 
-                <div className="pantry-actions">
-                  <button className="small-btn edit" onClick={() => startEdit(item)}>
-                    Edit
-                  </button>
+                  <div className="pantry-actions">
+                    <button
+                      className="small-btn edit"
+                      onClick={() => startEdit(item)}
+                    >
+                      Edit
+                    </button>
 
-                  <button
-                    className="small-btn delete"
-                    onClick={() => {
-                      setSelected(item);
-                      setOpenDelete(true);
-                    }}
-                  >
-                    Delete
-                  </button>
+                    <button
+                      className="small-btn delete"
+                      onClick={() => {
+                        setSelected(item);
+                        setOpenDelete(true);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
@@ -179,7 +204,9 @@ export default function Pantry() {
             <form onSubmit={addItem}>
               <select
                 value={form.ingredient_id}
-                onChange={(e) => setForm({ ...form, ingredient_id: e.target.value })}
+                onChange={(e) =>
+                  setForm({ ...form, ingredient_id: e.target.value })
+                }
                 required
               >
                 <option value="">Select Ingredient</option>
@@ -193,7 +220,9 @@ export default function Pantry() {
               <input
                 placeholder="Quantity"
                 value={form.quantity}
-                onChange={(e) => setForm({ ...form, quantity: e.target.value })}
+                onChange={(e) =>
+                  setForm({ ...form, quantity: e.target.value })
+                }
                 required
               />
 
@@ -207,19 +236,25 @@ export default function Pantry() {
               <input
                 type="date"
                 value={form.expiry_date}
-                onChange={(e) => setForm({ ...form, expiry_date: e.target.value })}
+                onChange={(e) =>
+                  setForm({ ...form, expiry_date: e.target.value })
+                }
               />
 
               <input
                 placeholder="Location (Fridge, Freezer...)"
                 value={form.location}
-                onChange={(e) => setForm({ ...form, location: e.target.value })}
+                onChange={(e) =>
+                  setForm({ ...form, location: e.target.value })
+                }
               />
 
               <button className="btn-primary">Add</button>
             </form>
 
-            <button className="close-btn" onClick={() => setOpenAdd(false)}>Cancel</button>
+            <button className="close-btn" onClick={() => setOpenAdd(false)}>
+              Cancel
+            </button>
           </div>
         </div>
       )}
@@ -233,7 +268,9 @@ export default function Pantry() {
             <form onSubmit={saveEdit}>
               <select
                 value={form.ingredient_id}
-                onChange={(e) => setForm({ ...form, ingredient_id: e.target.value })}
+                onChange={(e) =>
+                  setForm({ ...form, ingredient_id: e.target.value })
+                }
                 required
               >
                 {ingredients.map((i) => (
@@ -245,7 +282,9 @@ export default function Pantry() {
 
               <input
                 value={form.quantity}
-                onChange={(e) => setForm({ ...form, quantity: e.target.value })}
+                onChange={(e) =>
+                  setForm({ ...form, quantity: e.target.value })
+                }
                 required
               />
 
@@ -258,18 +297,24 @@ export default function Pantry() {
               <input
                 type="date"
                 value={form.expiry_date}
-                onChange={(e) => setForm({ ...form, expiry_date: e.target.value })}
+                onChange={(e) =>
+                  setForm({ ...form, expiry_date: e.target.value })
+                }
               />
 
               <input
                 value={form.location}
-                onChange={(e) => setForm({ ...form, location: e.target.value })}
+                onChange={(e) =>
+                  setForm({ ...form, location: e.target.value })
+                }
               />
 
               <button className="btn-primary">Save</button>
             </form>
 
-            <button className="close-btn" onClick={() => setOpenEdit(false)}>Cancel</button>
+            <button className="close-btn" onClick={() => setOpenEdit(false)}>
+              Cancel
+            </button>
           </div>
         </div>
       )}
@@ -279,13 +324,20 @@ export default function Pantry() {
         <div className="modal-overlay">
           <div className="modal">
             <h2>Delete Item?</h2>
-            <p>Are you sure you want to delete {selected?.ingredient?.name}?</p>
+            <p>
+              Are you sure you want to delete{" "}
+              {selected?.ingredient?.name ||
+                (selected && ingredientNameById[selected.ingredient_id])}
+              ?
+            </p>
 
             <button className="btn-danger" onClick={deleteItem}>
               Delete
             </button>
 
-            <button className="close-btn" onClick={() => setOpenDelete(false)}>Cancel</button>
+            <button className="close-btn" onClick={() => setOpenDelete(false)}>
+              Cancel
+            </button>
           </div>
         </div>
       )}

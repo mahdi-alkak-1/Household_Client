@@ -1,0 +1,92 @@
+/* ================================
+   Meal Plan
+   ================================ */
+
+.mealplan-header {
+  padding: 1.75rem 2rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mealplan-header h1 {
+  font-size: 1.6rem;
+}
+
+.week-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.week-controls button {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.week-controls span {
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}
+
+.mealplan-grid-container {
+  padding: 0.75rem 2rem 2.5rem;
+}
+
+/* Table */
+.mealplan-grid {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #020617 0, #020617 65%);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.7);
+}
+
+.mealplan-grid thead {
+  background: linear-gradient(90deg, #0f172a, #020617);
+}
+
+.mealplan-grid th,
+.mealplan-grid td {
+  border: 1px solid rgba(30, 64, 175, 0.4);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.83rem;
+}
+
+.mealplan-grid th {
+  font-weight: 600;
+  text-align: center;
+}
+
+.slot-label {
+  font-weight: 600;
+  width: 110px;
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.mealplan-grid select {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  color: #e5e7eb;
+  font-size: 0.8rem;
+}
+
+.empty-slot {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.mealplan-hint {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
