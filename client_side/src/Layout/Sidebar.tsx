@@ -1,3 +1,4 @@
+// src/Layout/Sidebar.tsx
 import { NavLink } from "react-router-dom";
 import "../styles/sidebar.css";
 
@@ -7,6 +8,7 @@ const navItems = [
   { to: "/pantry", label: "Pantry", icon: "🧊" },
   { to: "/recipes", label: "Recipes", icon: "📖" },
   { to: "/shopping", label: "Shopping", icon: "🛒" },
+  { to: "/expenses", label: "Expenses", icon: "💰" }, // NEW
   { to: "/meal-plan", label: "Meal Plan", icon: "🍽" },
   { to: "/profile", label: "Profile", icon: "👤" },
 ];

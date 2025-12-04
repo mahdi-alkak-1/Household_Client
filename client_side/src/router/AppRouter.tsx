@@ -9,7 +9,7 @@ import ShoppingList from "../pages/Shopping/ShoppingList";
 import Profile from "../pages/Profile/Profile";
 import Ingredients from "../pages/Ingredients/Ingredients";
 import MealPlan from "../pages/MealPlan/MealPlan";
-
+import ExpensesPage from "../pages/Expenses/Expenses";
 
 export default function AppRouter() {
   return (
@@ -25,6 +25,7 @@ export default function AppRouter() {
         <Route path="/meal-plan" element={<MealPlan />} />
         <Route path="/shopping" element={<ShoppingList />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/expenses" element={<ExpensesPage/>} />
       </Routes>
     </BrowserRouter>
   );
