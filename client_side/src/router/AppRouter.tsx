@@ -8,6 +8,8 @@ import Recipes from "../pages/Recipes/Recipes";
 import ShoppingList from "../pages/Shopping/ShoppingList";
 import Profile from "../pages/Profile/Profile";
 import Ingredients from "../pages/Ingredients/Ingredients";
+import MealPlan from "../pages/MealPlan/MealPlan";
+
 
 export default function AppRouter() {
   return (
@@ -20,6 +22,7 @@ export default function AppRouter() {
         <Route path="/ingredients" element={<Ingredients />} />
         <Route path="/pantry" element={<Pantry />} />
         <Route path="/recipes" element={<Recipes />} />
+        <Route path="/meal-plan" element={<MealPlan />} />
         <Route path="/shopping" element={<ShoppingList />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
